@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <meta charset="UTF-8">      
+</head>
+<body onload="load()">
+    <header>
+        
+        <div id="sessionCompany">
+            <img src="img/logoLeaoPlacas2.png" width="63px" height="63px">
+            <div id="nameCompany">
+                <h1>Leão Placas</h1>
+                <i>Visualizando o objetivo da sua empresa</i>
+            </div>
+        </div>   
+        <span id="user">Dados usuário</span>    
+    </header>    
+    <nav>
+        <a href="">Home</a>
+        <a href="">Sobre</a>
+        <a href="">Serviços</a>
+        <a href="">Portifólio</a>
+        <a href="">Contatos</a>
+    </nav>
+    
+    <section>
+
+        <aside class="tools">
+             <form id="controls">
+                    <h2>Controles</h2>
+
+                    <fieldset id="basicSettings"> 
+                        <legend>Definições Básicas</legend> 
+
+                        <label class="legend" for="options">Produto:</label>
+                        <select class="control" id="options" onchange="changeProduct()">
+                            <option value="cartao-de-visitas">Cartão de visitas</option>
+                            <option value="panfleto">Panfleto</option>
+                            <option value="banner">Banner</option>
+                            <option value="caneca">Caneca</option>
+                        </select>   
+
+                        <label class="legend" for="productAmount">Quantidade</label>
+                        <input class="control" id="productAmount" type="text">
+                        
+                         <legend>Orientação</legend>
+
+                        <label class="legend" >Paisagem</label>
+                        <input id="paisaje" class="control" type="radio" name="orientation" value="paisaje" onclick="changeProduct()" checked >
+
+                        <label class="legend">Retrato</label>
+                        <input  id="portrait" class="control" type="radio" name="orientation" value="portrait" onclick="changeProduct()" >
+
+                        <!--<label class="legend" for="rodar">Rotacionar: </label>
+                        <input class="control" id="rodar" type="range" min="0" max="180" onchange="resizeAngle(this.value)" value="0" )>-->
+                   
+                    </fieldset>    
+                        
+                    <fieldset>
+                        <legend>Lados</legend>
+                        <label class="legend" for="oneSide">Frente</label>
+                        <input class="control" name="side" id="oneSide" type="radio" onchange="changeAmountSides(this.id)" checked>
+
+                        <label class="legend" for="twoSide">Frente e Verso</label>
+                        <input class="control" name="side" id="twoSide" type="radio" onchange="changeAmountSides(this.id)">
+
+                        <label class="legend" for="titleFront">Título Frontal:</label>
+                        <input class="control" id="titleFront" type="text" onchange="changeTitleFront(this.value)">
+
+                        <label class="legend" for="textFront">Texto Frontal:</label>
+                        <input class="control" id="textFront" type="text" onchange="changeTextFront(this.value)">
+
+                        <label class="legend" for="titleBack">Título Traseiro:</label>
+                        <input class="control" id="titleBack" type="text" onchange="changeTitleBack(this.value)">
+
+                        <label class="legend" for="textBack">Texto Traseiro:</label>
+                        <input class="control" id="textBack" type="text" onchange="changeTextBack(this.value)">                        
+                       
+                    </fieldset>               
+
+                    <fieldset>
+                        <legend>Estilização </legend>                     
+
+                        <label class="legend" for="checkbox">Alterar o tamanho:</label>
+                        <input class="control" id="checkbox" type="checkbox" onchange="optimazeSize()">
+
+                        <label class="legend" for="width" >Largura:</label>
+                        <input class="control" id="width" type="range" min="120" max="1000" value="600" onchange="resizeWidthProduct(this.value)" disabled>
+
+                        <label class="legend" for="height" >Cumprimento:</label>
+                        <input class="control" id="height" type="range" min="70" max="600" value="370" onchange="resizeHeightProduct(this.value)" disabled>
+              
+                        <label class="legend" for="zoom">Zoom:</label>
+                        <input class="control" id="zoom" type="range" min="0" max="5" value="0" onchange="zoomImage(this.value)">
+                        
+                        <label class="legend" for="colorFront">Cor da Frente:</label>
+                        <input class="control" id="colorFront" type="color" value="#FC0" onchange="setBackColorFront(this.id,this.value)">
+
+                        <label class="legend" for="colorBack">Cor do Verso:</label>
+                        <input class="control" id="colorBack" type="color" value="#80BFFF" onchange="setBackColorFront(this.id,this.value)">
+
+
+                        <legend>Imagem de fundo:</legend>
+                        <label class="legend">Imagens Prontas:</label>   
+                        <input id="modalImagesFront" class="control" type="button" value="Escolha" onclick="enterModal()" >
+
+                        <div class="images">
+                            <span onclick="returnPage()">Click aqui para Sair.</span>
+                            <div class="gridImages">
+                                <div class="boxImage">
+                                    <h1>Titulo da Imagem</h1>
+                                    <img src="img/bussiness.jpg" alt="Negócios" onclick="selectBankImages(this.src)">
+                                </div>
+                                <div class="boxImage">
+                                    <h1>Titulo da Imagem</h1>
+                                    <img src="img/graphic.jpg" alt="Gráfica" onclick="selectBankImages(this.src)">
+                                </div>
+                                <div class="boxImage">
+                                    <h1>Titulo da Imagem</h1>
+                                    <img src="img/logo.jpg" alt="Logo" onclick="selectBankImages(this.src)">
+                                </div>
+                                <div class="boxImage">
+                                    <h1>Titulo da Imagem</h1>
+                                    <img src="img/maintenance.jpg" alt="Manutenção" onclick="selectBankImages(this.src)">
+                                </div>
+                                <div class="boxImage">
+                                    <h1>Titulo da Imagem</h1>
+                                    <img src="img/rose.jpg" alt="Rosa" onclick="selectBankImages(this.src)">
+                                </div>
+                            </div>   
+                            <div id="chosenSide">
+                                <h1>Escolha o lado</h1>
+                                <label for="chosenSideFront">Frente</label>   
+                                <input id="chosenSideFront" name="chosen" value="Frente" type="radio">      
+                                <label for="chosenSideBack">Verso</label>   
+                                <input id="chosenSideBack" name="chosen" value="Verso" type="radio">  
+                            </div>
+                                         
+                        </div> 
+
+                        <label class="legend" for="leftTopToInclineUp">No computador:</label>
+                        <input id="openFile" class="control"type="file" accept="image/*" onchange="selectPhoto()">  
+
+                        <legend>Inclinar</legend>
+
+                        <label class="longLegend" for="leftTopToInclineUp">Para cima:</label>
+                        <input class="controlLong" id="leftTopToInclineUp" type="range" min="0" max="20" value="0" onchange="incline(this.id,this.value)">
+
+                        <label class="longLegend" for="rightTopToInclineUp">Para baixo:</label>
+                        <input class="controlLong" id="rightTopToInclineUp" type="range" min="0" max="20" value="0" onchange="incline(this.id,this.value)">
+                                  
+                        <label class="longLegend" for="rightTopToInclineRight">Para direita:</label>
+                        <input class="controlLong" id="rightTopToInclineRight" type="range" min="0" max="20" value="0" onchange="incline(this.id,this.value)">
+
+                        <label class="longLegend" for="rightBottomToInclineRight">Para esquerda:</label>
+                        <input class="controlLong" id="rightBottomToInclineRight" type="range" min="0" max="20" value="0" onchange="incline(this.id,this.value)">
+                   
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Cantos:</legend>
+                        
+                            <legend>Arredondar:</legend>
+
+                            <label class="legend" for="cantosSuperiorEsquerdo">Superior esquerdo:</label>
+                            <input class="control" id="cantosSuperiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerTopLeft(this.value)">
+
+                            <label class="legend" for="cantosSuperiorDireito">Superior direito:</label>
+                            <input class="control" id="cantosSuperiorDireito" type="range" min="0" max="1000" value="0" onchange="setCornerTopRight(this.value)">
+
+                            <label class="legend" for="cantosInferiorEsquerdo">Inferior esquerdo:</label>
+                            <input class="control" id="cantosInferiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerBottomLeft(this.value)">
+
+                            <label class="legend" for="cantosInferiorDireito">Inferior direito:</label>
+                            <input class="control" id="cantosInferiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerBottomRight(this.value)">
+
+                            <!--<legend>Achatar:</legend>
+
+                            <label class="legend" for="cantosSuperiorEsquerdo">Superior esquerdo:</label>
+                            <input class="control" id="cantosSuperiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerTopLeft(this.value)">
+
+                            <label class="legend" for="cantosSuperiorDireito">Superior direito:</label>
+                            <input class="control" id="cantosSuperiorDireito" type="range" min="0" max="1000" value="0" onchange="setCornerTopRight(this.value)">
+
+                            <label class="legend" for="cantosInferiorEsquerdo">Inferior esquerdo:</label>
+                            <input class="control" id="cantosInferiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerBottomLeft(this.value)">
+
+                            <label class="legend" for="cantosInferiorDireito">Inferior direito:</label>
+                            <input class="control" id="cantosInferiorEsquerdo" type="range" min="0" max="1000" value="0" onchange="setCornerBottomRight(this.value)">
+                            -->
+                    </fieldset>
+              
+                </form>
+        </aside>
+      
+        <article class="displayArea">  
+            
+            <h1>Monte sua arte</h1>           
+
+            <div id="tabTools">
+                <li><a href="">Arquivo</a>
+                    <ul>
+                        <li><a href="#">Salvar</a></li>
+                        <li><a href="#">Salvar como</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Editar</a>
+                    <ul>
+                        <li><a href="#">Desfazer alteração</a></li>
+                        <li><a href="#">Copiar</a></li>
+                        <li><a href="#">Colar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Exibir</a>
+                    <ul>
+                        <li><a href="#">Exibição 3d</a></li>
+                        <li><a href="#">Exibição de duas faces</a></li>
+                        <li><a href="#">Exibição de uma face</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Inserir</a>
+                    <ul>
+                        <li><a href="#">Imagem de fundo</a></li>
+                        <li><a href="#">Imagem</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Formatar</a>
+                     <ul>
+                        <li id="toolsFont"><a href="#">Fonte</a>
+                            <ul id="menuFont">
+                                <li><a href="#">Tipo</a></li>
+                                <li><a href="#">Tamanho</a></li>
+                                <li><a href="#">Negrito</a></li>
+                                <li><a href="#">Itálico</a></li>
+                                <li><a href="#">Sublinhado</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Coluna</a></li>
+                        <li><a href="#">Borda</a></li>
+                        <li><a href="#">Margem</a></li>
+                        <li><a href="#">Espaçamento</a></li>
+                        <li id="toolsFilter"><a href="#">Filtros de Imagem</a>
+                             <ul id="menuFilter">
+                                <li><a href="#">negativo</a></li>
+                                <li><a href="#">Foco</a></li>
+                                <li><a href="#">sepia</a></li>
+                                <li><a href="#">inverter cor</a></li>
+                                <li><a href="#">escala de cinza</a></li>
+                                <li><a href="#">brilho</a></li>
+                                <li><a href="#">contraste</a></li>
+                                <li><a href="#">transparencia</a></li>
+                                <li><a href="#">saturação</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Tabela</a></li>
+                <li><a href="#">Ajuda</a></li>
+            </div>
+            
+            <div id="showWidthProduct">                
+                <label for="WidthProduct">Largura</label><br>
+                <input id="WidthProduct" type="text" placeholder="0" onchange="resizeWidthProduct(this.value)">
+            </div>  
+              
+            <div class="displayPanel">           
+                <div id="product" class="display_paisaje">
+                    <span id="productBack" class="cardBack" >
+                        <h1 class="product_titleBack">Título Trazeiro</h1>
+                        <p class="product_textBack">Texto trazeiro</p>
+                    </span>
+                    <span id="productFace" class="cardFront">                        
+                        <h1 class="product_titleFront">Título Frontal</h1>
+                        <p class="product_textFront">Texto Frontal</p>
+                    </span>                    
+                </div>    
+
+                
+            </div>       
+
+            <div id="showHeightProduct">                
+                <label for="heightProduct">Altura</label><br>
+                <input id="heightProduct" type="text" placeholder="0" onchange="resizeHeightProduct(this.value)">
+            </div>  
+        </article>
+
+    </section>
+
+   
+
+    <footer>
+        <details>
+            <summary>Copyright 2017</summary>
+            <p>by suportedesk</p>
+        </details>
+    </footer>
+</body>
+</html>
