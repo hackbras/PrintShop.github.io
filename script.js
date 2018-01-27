@@ -1,229 +1,231 @@
+function load() {
 
-function load(){
+    setHeight();
 
-  setHeight();  
-   
-  var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
-  var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
-  var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
-  var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
-  
-  toogleDisabled(inputWidth,inputHeight,null,true);
-  toogleDisabled(showHeight,showWidth,null,true);
+    var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
+    var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
+    var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
+    var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
 
-  changeProduct();  
+    toogleDisabled(inputWidth, inputHeight, null, true);
+    toogleDisabled(showHeight, showWidth, null, true);
+
+    changeProduct();
 
 }
 
-var side=1;
-var orientation="paisaje";
+var side = 1;
+var orientation = "paisaje";
 var options = document.getElementById('options');
 var product = document.getElementById('product');
-var i=0;
+var i = 0;
 
 //setOrientation (portrait or paisaje)
-function setOrientation(newOrientation){
-    orientation=newOrientation;
+function setOrientation(newOrientation) {
+    orientation = newOrientation;
 }
 
 
-for (i = 0; i < 4 ; i++){
-  var selected = options[i].selected;
-  var option;
-      
-      if(selected){
-          option = options[i].value;
-      }
+for (i = 0; i < 4; i++) {
+    var selected = options[i].selected;
+    var option;
+
+    if (selected) {
+        option = options[i].value;
+    }
 }
 
 //set height
-function setHeight(){
+function setHeight() {
     var size = document.getElementsByTagName('section');
-    size[0].style.height = (screen.height-200)+"px"
+    size[0].style.height = (screen.height - 200) + "px"
 }
 
 //Change product
-function changeKindOfProduct(newProduct){
+function changeKindOfProduct(newProduct) {
     var product = document.getElementById('product');
     var oldClass = document.getElementById('product');
 
     //setOrientation(newOrientation);
 
-    if(orientation=='paisaje'){
-        switch(newProduct){
+    if (orientation == 'paisaje') {
+        switch (newProduct) {
             case 'cartao-de-visitas':
-            sizeDefault(550,300,20);
-            //changeClass(product,oldClass,'defaultBusinessCard_paisaje');
+                sizeDefault(550, 300, 20);
+                //changeClass(product,oldClass,'defaultBusinessCard_paisaje');
                 break;
 
             case 'panfleto':
-            sizeDefault(500,350,20);
-            //changeClass(product,oldClass,'defaultPamphlet_paisaje');
+                sizeDefault(500, 350, 20);
+                //changeClass(product,oldClass,'defaultPamphlet_paisaje');
                 break;
 
             case 'banner':
-            sizeDefault(800,350,-8);
-            // changeClass(product,oldClass,'defaultBanner_paisaje');
+                sizeDefault(800, 350, -8);
+                // changeClass(product,oldClass,'defaultBanner_paisaje');
                 break;
 
             case 'caneca':
-            sizeDefault(350,350,30);
-            //changeClass(product,oldClass,'mug');
+                sizeDefault(350, 350, 30);
+                //changeClass(product,oldClass,'mug');
                 break;
         }
-    }
-    else if(orientation=='portrait'){
-        switch(newProduct){
+    } else if (orientation == 'portrait') {
+        switch (newProduct) {
             case 'cartao-de-visitas':
-            sizeDefault(300,550,36);
-            //changeClass(product,oldClass,'defaultBusinessCard_portrait');
+                sizeDefault(300, 550, 36);
+                //changeClass(product,oldClass,'defaultBusinessCard_portrait');
                 break;
 
             case 'panfleto':
-            sizeDefault(350,500,30);
-            //changeClass(product,oldClass,'defaultPamphlet_portrait');
+                sizeDefault(350, 500, 30);
+                //changeClass(product,oldClass,'defaultPamphlet_portrait');
                 break;
 
             case 'banner':
-            sizeDefault(350,800,30);
-            // changeClass(product,oldClass,'defaultBanner_portrait');
+                sizeDefault(350, 800, 30);
+                // changeClass(product,oldClass,'defaultBanner_portrait');
                 break;
 
             case 'caneca':
-            sizeDefault(350,350,30);
-            //changeClass(product,oldClass,'mug');
+                sizeDefault(350, 350, 30);
+                //changeClass(product,oldClass,'mug');
                 break;
         }
-    }
-    else{
-        console.log("Erro orientação não reconhecida valor:"+ orientation);
+    } else {
+        console.log("Erro orientação não reconhecida valor:" + orientation);
     }
 }
 
-function sizeDefault(width,height,marginLeft){
-    document.getElementsByClassName('cardFront')[0].style.width = width+"px"
-    document.getElementsByClassName('cardFront')[0].style.height = height+"px"
-    document.getElementsByClassName('cardFront')[0].style.marginLeft= marginLeft+"%"
+function sizeDefault(width, height, marginLeft) {
+    document.getElementsByClassName('cardFront')[0].style.width = width + "px"
+    document.getElementsByClassName('cardFront')[0].style.height = height + "px"
+    document.getElementsByClassName('cardFront')[0].style.marginLeft = marginLeft + "%"
 
-    document.getElementsByClassName('cardBack')[0].style.width = width+"px"
-    document.getElementsByClassName('cardBack')[0].style.height = height+"px"
-    document.getElementsByClassName('cardBack')[0].style.marginLeft= marginLeft+"%"
+    document.getElementsByClassName('cardBack')[0].style.width = width + "px"
+    document.getElementsByClassName('cardBack')[0].style.height = height + "px"
+    document.getElementsByClassName('cardBack')[0].style.marginLeft = marginLeft + "%"
 }
 
 
 
 //Change Text
 
-function changeTitleFront(value){
+function changeTitleFront(value) {
     document.getElementsByClassName('product_titleFront')[0].innerHTML = value;
 }
-function changeTitleBack(value){
+
+function changeTitleBack(value) {
     document.getElementsByClassName('product_titleBack')[0].innerHTML = value;
 }
 
-function changeTextFront(value){
+function changeTextFront(value) {
     document.getElementsByClassName('product_textFront')[0].innerHTML = value;
 }
-function changeTextBack(value){
+
+function changeTextBack(value) {
     document.getElementsByClassName('product_textBack')[0].innerHTML = value;
 }
 
-function changeProduct(){    
-    orientation = document.body.querySelectorAll("input[name='orientation']:checked")[0].value; 
+function changeProduct() {
+    orientation = document.body.querySelectorAll("input[name='orientation']:checked")[0].value;
     var productChosen = document.body.querySelectorAll("option:checked")[0].value;
 
     setOrientation(orientation);
     changeKindOfProduct(productChosen);
 }
 
-function changeClass(element,oldClass,newClass){
-    oldClass.classList.value="";
+function changeClass(element, oldClass, newClass) {
+    oldClass.classList.value = "";
     element.classList.add(newClass);
 }
 
 //setCorner
-function setCornerTopLeft(newCorner){
+function setCornerTopLeft(newCorner) {
     var product = document.getElementById('product');
-    product.children[0].style.borderTopLeftRadius = newCorner+"px"
-    product.children[1].style.borderTopRightRadius = newCorner+"px"
+    product.children[0].style.borderTopLeftRadius = newCorner + "px"
+    product.children[1].style.borderTopRightRadius = newCorner + "px"
 }
-function setCornerTopRight(newCorner){
+
+function setCornerTopRight(newCorner) {
     var product = document.getElementById('product');
-    product.children[0].style.borderTopRightRadius = newCorner+"px"
-    product.children[1].style.borderTopLeftRadius = newCorner+"px"
+    product.children[0].style.borderTopRightRadius = newCorner + "px"
+    product.children[1].style.borderTopLeftRadius = newCorner + "px"
 }
-function setCornerBottomLeft(newCorner){
+
+function setCornerBottomLeft(newCorner) {
     var product = document.getElementById('product');
-    product.children[0].style.borderBottomLeftRadius = newCorner+"px"
-    product.children[1].style.borderBottomRightRadius = newCorner+"px"
+    product.children[0].style.borderBottomLeftRadius = newCorner + "px"
+    product.children[1].style.borderBottomRightRadius = newCorner + "px"
 }
-function setCornerBottomRight(newCorner){
+
+function setCornerBottomRight(newCorner) {
     var product = document.getElementById('product');
-    product.children[0].style.borderBottomRightRadius = newCorner+"px"
-    product.children[1].style.borderBottomLeftRadius = newCorner+"px"
+    product.children[0].style.borderBottomRightRadius = newCorner + "px"
+    product.children[1].style.borderBottomLeftRadius = newCorner + "px"
 }
 
 
 //to incline
 
-function incline(id,value){
+function incline(id, value) {
     var product = document.getElementById('product');
 
-    switch (id){
+    switch (id) {
         case 'rightTopToInclineRight':
-          product.style.transform= "skewX(-"+value+"deg)";
+            product.style.transform = "skewX(-" + value + "deg)";
             break;
         case 'rightBottomToInclineRight':
-          product.style.transform= "skewX("+value+"deg)";
+            product.style.transform = "skewX(" + value + "deg)";
             break;
         case 'rightTopToInclineUp':
-          product.style.transform= "skewY(-"+value+"deg)";
-            break;        
-        case 'leftTopToInclineUp':
-          product.style.transform= "skewY("+value+"deg)";
+            product.style.transform = "skewY(-" + value + "deg)";
             break;
-    }  
+        case 'leftTopToInclineUp':
+            product.style.transform = "skewY(" + value + "deg)";
+            break;
+    }
 }
 
 // resizeAngle 
-function resizeAngle(newSize){
-  var angle = newSize;
-  toRotate(angle);
+function resizeAngle(newSize) {
+    var angle = newSize;
+    toRotate(angle);
 }
 
 //optimazeSize
 
-function optimazeSize(){
-   var choice = document.body.querySelectorAll("input[id='checkbox']")[0].checked;
+function optimazeSize() {
+    var choice = document.body.querySelectorAll("input[id='checkbox']")[0].checked;
 
-   var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
-   var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
-   var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
-   var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
-    
-    if(choice){
-        toogleDisabled(inputWidth,inputHeight,null,false);
-        toogleDisabled(showHeight,showWidth,null,false);
-    }else{
-        toogleDisabled(inputWidth,inputHeight,null,true);
-        toogleDisabled(showHeight,showWidth,null,true);
+    var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
+    var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
+    var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
+    var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
+
+    if (choice) {
+        toogleDisabled(inputWidth, inputHeight, null, false);
+        toogleDisabled(showHeight, showWidth, null, false);
+    } else {
+        toogleDisabled(inputWidth, inputHeight, null, true);
+        toogleDisabled(showHeight, showWidth, null, true);
     }
 }
 
-function toogleDisabled(element1,element2,element3,boleanValue){
-    
-    element1.disabled= boleanValue;   
-    element2.disabled= boleanValue;  
-    element3.disabled= boleanValue;  
+function toogleDisabled(element1, element2, element3, boleanValue) {
+
+    element1.disabled = boleanValue;
+    element2.disabled = boleanValue;
+    element3.disabled = boleanValue;
 
     if (boleanValue) {
         element1.style.opacity = "0.4";
-        element2.style.opacity = "0.4"; 
-        element3.style.opacity = "0.4";  
+        element2.style.opacity = "0.4";
+        element3.style.opacity = "0.4";
     } else {
         element1.style.opacity = "1";
-        element2.style.opacity = "1"; 
-        element3.style.opacity = "1";  
+        element2.style.opacity = "1";
+        element3.style.opacity = "1";
     }
 }
 
@@ -242,9 +244,9 @@ function toogleDisabled(element1,element2,element3,boleanValue){
 //rules for length
 
 //converterUnits (
-    //milimeters to pixels,
-    //centimeter to pixels,
-    //meter to pixels)
+//milimeters to pixels,
+//centimeter to pixels,
+//meter to pixels)
 
 //Front and back 
 
@@ -266,8 +268,8 @@ coluna,
 //Unidades (quantidade)
 
 //exibir duas faces simultãneamente
-    //se estiver como paisagem exibir lado a lado
-    //se não exibir em cima da outra
+//se estiver como paisagem exibir lado a lado
+//se não exibir em cima da outra
 
 //Exibir um pado por vez
 
@@ -281,102 +283,100 @@ coluna,
 
 
 
-function changeAmountSides(id){
+function changeAmountSides(id) {
     var titleBack = document.body.querySelectorAll('[id=titleBack]')[0];
     var textBack = document.body.querySelectorAll('[id=textBack]')[0];
     var colorBack = document.body.querySelectorAll('[id=colorBack]')[0];
     var product = document.getElementById('product');
- 
-    if (id == "oneSide") {        
-        toogleDisabled(titleBack,textBack,colorBack,true);
+
+    if (id == "oneSide") {
+        toogleDisabled(titleBack, textBack, colorBack, true);
         product.children[0].style.display = "none";
-    } else {        
-        toogleDisabled(titleBack,textBack,colorBack,false);
+    } else {
+        toogleDisabled(titleBack, textBack, colorBack, false);
         product.children[0].style.display = "block";
     }
 }
 
 
-function resizeWidthProduct(newWidth){
-  var product = document.getElementById('product');
-    product.children[0].style.width = newWidth+"px";
-    product.children[1].style.width = newWidth+"px";
+function resizeWidthProduct(newWidth) {
+    var product = document.getElementById('product');
+    product.children[0].style.width = newWidth + "px";
+    product.children[1].style.width = newWidth + "px";
 
     showSizeWidth(newWidth);
 }
-         
-function resizeHeightProduct(newHeight){
-  var product = document.getElementById('product');
-    product.children[0].style.height = newHeight+"px";
-    product.children[1].style.height = newHeight+"px";
+
+function resizeHeightProduct(newHeight) {
+    var product = document.getElementById('product');
+    product.children[0].style.height = newHeight + "px";
+    product.children[1].style.height = newHeight + "px";
 
     showSizeHeight(newHeight);
 }
 
 
 //showSizeWidth
-function showSizeWidth(size){
+function showSizeWidth(size) {
     var width = document.body.querySelectorAll("[id='showWidthProduct']");
 
-    if(size < 144){
+    if (size < 144) {
         alert("Atenção: Tamanho mínimo excedido!");
-        width[0].children[2].placeholder= 144;   
-    }
-    else if (size >= 144 && size <= 970) {        
-         width[0].children[2].placeholder= size;
+        width[0].children[2].placeholder = 144;
+    } else if (size >= 144 && size <= 970) {
+        width[0].children[2].placeholder = size;
     } else {
-         alert("Atenção: Tamanho máximo excedido!");
-         width[0].children[2].placeholder= 970;    
+        alert("Atenção: Tamanho máximo excedido!");
+        width[0].children[2].placeholder = 970;
     }
-   
+
 }
 
 //showSizeHeight
-function showSizeHeight(size){
-    var height = document.body.querySelectorAll("[id='showHeightProduct']"); 
-    
-    if(size < 80){
+function showSizeHeight(size) {
+    var height = document.body.querySelectorAll("[id='showHeightProduct']");
+
+    if (size < 80) {
         alert("Atenção: Tamanho mínimo excedido!");
-        height[0].children[2].placeholder= 80;   
-    }
-    else if (size >= 80 && size <= 590) {        
-         height[0].children[2].placeholder= size;   
+        height[0].children[2].placeholder = 80;
+    } else if (size >= 80 && size <= 590) {
+        height[0].children[2].placeholder = size;
     } else {
-         alert("Atenção: Tamanho máximo excedido!");
-         height[0].children[2].placeholder= 590;    
+        alert("Atenção: Tamanho máximo excedido!");
+        height[0].children[2].placeholder = 590;
     }
 }
 
 
 
 
-function enterModal(){
+function enterModal() {
     document.getElementsByClassName('images')[0].style.display = "block";
 }
 
-function returnPage(){
+function returnPage() {
     document.getElementsByClassName('images')[0].style.display = "none";
 }
 
 //zoomImage
-function zoomImage(newSize){
-  var product = document.getElementById('product');
-  //product.style.transform= "scale(1."+newSize+",1."+newSize+")"
+function zoomImage(newSize) {
+    var product = document.getElementById('product');
+    //product.style.transform= "scale(1."+newSize+",1."+newSize+")"
 
-  product.children[0].style.transform= "scale(1."+newSize+",1."+newSize+")"
-  //document.getElementById('product').children[0].style.transform= "scale(1.5,1.5)"
+    product.children[0].style.transform = "scale(1." + newSize + ",1." + newSize + ")"
+        //document.getElementById('product').children[0].style.transform= "scale(1.5,1.5)"
 
-  product.children[1].style.transform= "scale(1."+newSize+",1."+newSize+")"
-  //document.getElementById('product').children[0].style.transform= "scale(1.5,1.5)"
+    product.children[1].style.transform = "scale(1." + newSize + ",1." + newSize + ")"
+        //document.getElementById('product').children[0].style.transform= "scale(1.5,1.5)"
 }
 
 //toRotate
-function toRotate(position){
+function toRotate(position) {
     var product = document.getElementById('product')
-    //back numero x 
-    //front -180 x
-    product.children[0].style.transform = "perspective(600px) rotateY("+ position +"deg)";
-    product.children[1].style.transform = "perspective(600px) rotateY("+ position-180 +"deg)";      
+        //back numero x 
+        //front -180 x
+    product.children[0].style.transform = "perspective(600px) rotateY(" + position + "deg)";
+    product.children[1].style.transform = "perspective(600px) rotateY(" + position - 180 + "deg)";
 }
 
 // .display_paisaje:hover > .cardFront{
@@ -389,45 +389,44 @@ function toRotate(position){
 var input = document.getElementById("inputFile");
 var fReader = new FileReader();
 fReader.readAsDataURL(input.files[0]);
-fReader.onloadend = function(event){
+fReader.onloadend = function(event) {
     var img = document.getElementById("product");
     img.src = event.target.result;
 }
 
 //setBackColor
-function setBackColorFront(id,newColor){
+function setBackColorFront(id, newColor) {
     var product = document.getElementById('product');
 
     if (id == "colorFront") {
         product.children[1].style.backgroundColor = newColor;
     } else {
         product.children[0].style.backgroundColor = newColor;
-    }    
+    }
 }
-function selectBankImages(src){
+
+function selectBankImages(src) {
     var newChosen = document.body.querySelectorAll('[name="chosen"]:checked')[0].value;
 
     if (newChosen == "Frente") {
-        document.getElementById('product').children[1].style.backgroundImage = "url('"+src+"')"
-    }
-    else if (newChosen == "Verso") {
-        document.getElementById('product').children[0].style.backgroundImage = "url('"+src+"')";
-    }
-    else{
+        document.getElementById('product').children[1].style.backgroundImage = "url('" + src + "')"
+    } else if (newChosen == "Verso") {
+        document.getElementById('product').children[0].style.backgroundImage = "url('" + src + "')";
+    } else {
         console.log("Erro sem tratamento");
     }
-    
+
 }
 
 //API FileReader
-function selectPhoto(){
+function selectPhoto() {
     var photo = document.getElementById('openFile').files[0];
 
-     var imageType = /image.*/;
+    var imageType = /image.*/;
 
-     if(!photo.type.match(imageType))
-         alert('Please select a Photo');
-     else{
+    if (!photo.type.match(imageType))
+        alert('Please select a Photo');
+    else {
         var s = 'Name: ' + photo.name;
         s += '<br>Type: ' + photo.type;
         s += '<br>Size: ' + photo.size;
@@ -439,12 +438,12 @@ function selectPhoto(){
 
         var reader = new FileReader();
         reader.onload = (function(aImg) {
-          return function(e) { 
-             aImg.src = e.target.result; 
-          };
+            return function(e) {
+                aImg.src = e.target.result;
+            };
         })(img);
 
-         reader.readAsDataURL(photo);
-      }
-               
+        reader.readAsDataURL(photo);
+    }
+
 }
