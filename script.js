@@ -16,8 +16,8 @@ function load() {
 
 var side = 1;
 var orientation = "paisaje";
-var options = document.getElementById('options');
-var product = document.getElementById('product');
+var options = $('#options');
+var product = $('#product');
 var i = 0;
 
 //setOrientation (portrait or paisaje)
@@ -43,8 +43,8 @@ function setHeight() {
 
 //Change product
 function changeKindOfProduct(newProduct) {
-    var product = document.getElementById('product');
-    var oldClass = document.getElementById('product');
+    var product = $('#product');
+    var oldClass = $('#product');
 
     //setOrientation(newOrientation);
 
@@ -98,13 +98,13 @@ function changeKindOfProduct(newProduct) {
 }
 
 function sizeDefault(width, height, marginLeft) {
-    document.getElementsByClassName('cardFront')[0].style.width = width + "px"
-    document.getElementsByClassName('cardFront')[0].style.height = height + "px"
-    document.getElementsByClassName('cardFront')[0].style.marginLeft = marginLeft + "%"
+    $('.cardFront').css('width', width + "px");
+    $('.cardFront').css('height', height + "px");
+    $('.cardFront').css('marginLeft', marginLeft + "%");
 
-    document.getElementsByClassName('cardBack')[0].style.width = width + "px"
-    document.getElementsByClassName('cardBack')[0].style.height = height + "px"
-    document.getElementsByClassName('cardBack')[0].style.marginLeft = marginLeft + "%"
+    $('.cardBack').css('width', width + "px");
+    $('.cardBack').css('height', height + "px");
+    $('.cardBack').css('marginLeft', marginLeft + "%");
 }
 
 
@@ -112,24 +112,24 @@ function sizeDefault(width, height, marginLeft) {
 //Change Text
 
 function changeTitleFront(value) {
-    document.getElementsByClassName('product_titleFront')[0].innerHTML = value;
+    $('.product_titleFront').html(value);
 }
 
 function changeTitleBack(value) {
-    document.getElementsByClassName('product_titleBack')[0].innerHTML = value;
+    $('.product_titleBack').html(value);
 }
 
 function changeTextFront(value) {
-    document.getElementsByClassName('product_textFront')[0].innerHTML = value;
+    $('.product_textFront').html(value);
 }
 
 function changeTextBack(value) {
-    document.getElementsByClassName('product_textBack')[0].innerHTML = value;
+    $('.product_textBack').html(value);
 }
 
 function changeProduct() {
-    orientation = document.body.querySelectorAll("input[name='orientation']:checked")[0].value;
-    var productChosen = document.body.querySelectorAll("option:checked")[0].value;
+    orientation = $("input[name='orientation']:checked").val();
+    var productChosen = $("option:checked").val();
 
     setOrientation(orientation);
     changeKindOfProduct(productChosen);
@@ -142,25 +142,25 @@ function changeClass(element, oldClass, newClass) {
 
 //setCorner
 function setCornerTopLeft(newCorner) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.borderTopLeftRadius = newCorner + "px"
     product.children[1].style.borderTopRightRadius = newCorner + "px"
 }
 
 function setCornerTopRight(newCorner) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.borderTopRightRadius = newCorner + "px"
     product.children[1].style.borderTopLeftRadius = newCorner + "px"
 }
 
 function setCornerBottomLeft(newCorner) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.borderBottomLeftRadius = newCorner + "px"
     product.children[1].style.borderBottomRightRadius = newCorner + "px"
 }
 
 function setCornerBottomRight(newCorner) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.borderBottomRightRadius = newCorner + "px"
     product.children[1].style.borderBottomLeftRadius = newCorner + "px"
 }
@@ -169,20 +169,20 @@ function setCornerBottomRight(newCorner) {
 //to incline
 
 function incline(id, value) {
-    var product = document.getElementById('product');
+    var product = $('#product');
 
     switch (id) {
         case 'rightTopToInclineRight':
-            product.style.transform = "skewX(-" + value + "deg)";
+            product.css('transform', 'skewX(-' + value + 'deg)');
             break;
         case 'rightBottomToInclineRight':
-            product.style.transform = "skewX(" + value + "deg)";
+            product.css('transform', 'skewX(' + value + 'deg)');
             break;
         case 'rightTopToInclineUp':
-            product.style.transform = "skewY(-" + value + "deg)";
+            product.css('transform', 'skewY(-' + value + 'deg)');
             break;
         case 'leftTopToInclineUp':
-            product.style.transform = "skewY(" + value + "deg)";
+            product.css('transform', 'skewY(' + value + 'deg)');
             break;
     }
 }
@@ -196,12 +196,12 @@ function resizeAngle(newSize) {
 //optimazeSize
 
 function optimazeSize() {
-    var choice = document.body.querySelectorAll("input[id='checkbox']")[0].checked;
+    var choice = $("input[id='checkbox']")[0].checked;
 
-    var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
-    var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
-    var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
-    var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
+    var inputWidth = $("input[id='width']")[0];
+    var inputHeight = $("input[id='height']")[0];
+    var showHeight = $("[id='showHeightProduct']")[0].children[2];
+    var showWidth = $("[id='showWidthProduct']")[0].children[2];
 
     if (choice) {
         toogleDisabled(inputWidth, inputHeight, null, false);
@@ -287,7 +287,7 @@ function changeAmountSides(id) {
     var titleBack = document.body.querySelectorAll('[id=titleBack]')[0];
     var textBack = document.body.querySelectorAll('[id=textBack]')[0];
     var colorBack = document.body.querySelectorAll('[id=colorBack]')[0];
-    var product = document.getElementById('product');
+    var product = $('#product');
 
     if (id == "oneSide") {
         toogleDisabled(titleBack, textBack, colorBack, true);
@@ -300,7 +300,7 @@ function changeAmountSides(id) {
 
 
 function resizeWidthProduct(newWidth) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.width = newWidth + "px";
     product.children[1].style.width = newWidth + "px";
 
@@ -308,7 +308,7 @@ function resizeWidthProduct(newWidth) {
 }
 
 function resizeHeightProduct(newHeight) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     product.children[0].style.height = newHeight + "px";
     product.children[1].style.height = newHeight + "px";
 
@@ -351,16 +351,16 @@ function showSizeHeight(size) {
 
 
 function enterModal() {
-    document.getElementsByClassName('images')[0].style.display = "block";
+    $('.images').css("display", "block");
 }
 
 function returnPage() {
-    document.getElementsByClassName('images')[0].style.display = "none";
+    $('.images').css("display", "none");
 }
 
 //zoomImage
 function zoomImage(newSize) {
-    var product = document.getElementById('product');
+    var product = $('#product');
     //product.style.transform= "scale(1."+newSize+",1."+newSize+")"
 
     product.children[0].style.transform = "scale(1." + newSize + ",1." + newSize + ")"
@@ -372,7 +372,7 @@ function zoomImage(newSize) {
 
 //toRotate
 function toRotate(position) {
-    var product = document.getElementById('product')
+    var product = $('#product')
         //back numero x 
         //front -180 x
     product.children[0].style.transform = "perspective(600px) rotateY(" + position + "deg)";
@@ -386,17 +386,17 @@ function toRotate(position) {
 // 	transform: perspective( 600px ) rotateY( 0deg );
 // }
 
-var input = document.getElementById("inputFile");
+var input = $("#inputFile");
 var fReader = new FileReader();
 fReader.readAsDataURL(input.files[0]);
 fReader.onloadend = function(event) {
-    var img = document.getElementById("product");
+    var img = $("#product");
     img.src = event.target.result;
 }
 
 //setBackColor
 function setBackColorFront(id, newColor) {
-    var product = document.getElementById('product');
+    var product = $('#product');
 
     if (id == "colorFront") {
         product.children[1].style.backgroundColor = newColor;
@@ -406,12 +406,12 @@ function setBackColorFront(id, newColor) {
 }
 
 function selectBankImages(src) {
-    var newChosen = document.body.querySelectorAll('[name="chosen"]:checked')[0].value;
+    var newChosen = $('[name="chosen"]:checked').val();
 
     if (newChosen == "Frente") {
-        document.getElementById('product').children[1].style.backgroundImage = "url('" + src + "')"
+        $('#product').children[1].style.backgroundImage = "url('" + src + "')"
     } else if (newChosen == "Verso") {
-        document.getElementById('product').children[0].style.backgroundImage = "url('" + src + "')";
+        $('#product').children[0].style.backgroundImage = "url('" + src + "')";
     } else {
         console.log("Erro sem tratamento");
     }
@@ -420,7 +420,7 @@ function selectBankImages(src) {
 
 //API FileReader
 function selectPhoto() {
-    var photo = document.getElementById('openFile').files[0];
+    var photo = $('#openFile').files[0];
 
     var imageType = /image.*/;
 
@@ -430,11 +430,11 @@ function selectPhoto() {
         var s = 'Name: ' + photo.name;
         s += '<br>Type: ' + photo.type;
         s += '<br>Size: ' + photo.size;
-        document.getElementById('product').innerHTML = s;
+        $('#product').innerHTML = s;
         // Display image
         var img = document.createElement("img");
         img.file = photo;
-        document.getElementById('product').appendChild(img);
+        $('#product').appendChild(img);
 
         var reader = new FileReader();
         reader.onload = (function(aImg) {
