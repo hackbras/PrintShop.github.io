@@ -2,10 +2,10 @@ function load() {
 
     setHeight();
 
-    var inputWidth = document.body.querySelectorAll("input[id='width']")[0];
-    var inputHeight = document.body.querySelectorAll("input[id='height']")[0];
-    var showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
-    var showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
+    let inputWidth = document.body.querySelectorAll("input[id='width']")[0];
+    let inputHeight = document.body.querySelectorAll("input[id='height']")[0];
+    let showHeight = document.body.querySelectorAll("[id='showHeightProduct']")[0].children[2];
+    let showWidth = document.body.querySelectorAll("[id='showWidthProduct']")[0].children[2];
 
     toogleDisabled(inputWidth, inputHeight, null, true);
     toogleDisabled(showHeight, showWidth, null, true);
@@ -14,11 +14,11 @@ function load() {
 
 }
 
-var side = 1;
-var orientation = "paisaje";
-var options = $('#options');
-var product = $('#product');
-var i = 0;
+let side = 1;
+let orientation = "paisaje";
+let options = $('#options');
+let product = $('#product');
+let i = 0;
 
 //setOrientation (portrait or paisaje)
 function setOrientation(newOrientation) {
@@ -27,8 +27,8 @@ function setOrientation(newOrientation) {
 
 
 for (i = 0; i < 4; i++) {
-    var selected = options[i].selected;
-    var option;
+    let selected = options[i].selected;
+    let option;
 
     if (selected) {
         option = options[i].value;
@@ -37,14 +37,14 @@ for (i = 0; i < 4; i++) {
 
 //set height
 function setHeight() {
-    var size = document.getElementsByTagName('section');
+    let size = document.getElementsByTagName('section');
     size[0].style.height = (screen.height - 200) + "px"
 }
 
 //Change product
 function changeKindOfProduct(newProduct) {
-    var product = $('#product');
-    var oldClass = $('#product');
+    let product = $('#product');
+    let oldClass = $('#product');
 
     //setOrientation(newOrientation);
 
@@ -129,7 +129,7 @@ function changeTextBack(value) {
 
 function changeProduct() {
     orientation = $("input[name='orientation']:checked").val();
-    var productChosen = $("option:checked").val();
+    let productChosen = $("option:checked").val();
 
     setOrientation(orientation);
     changeKindOfProduct(productChosen);
@@ -142,25 +142,25 @@ function changeClass(element, oldClass, newClass) {
 
 //setCorner
 function setCornerTopLeft(newCorner) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.borderTopLeftRadius = newCorner + "px"
     product.children[1].style.borderTopRightRadius = newCorner + "px"
 }
 
 function setCornerTopRight(newCorner) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.borderTopRightRadius = newCorner + "px"
     product.children[1].style.borderTopLeftRadius = newCorner + "px"
 }
 
 function setCornerBottomLeft(newCorner) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.borderBottomLeftRadius = newCorner + "px"
     product.children[1].style.borderBottomRightRadius = newCorner + "px"
 }
 
 function setCornerBottomRight(newCorner) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.borderBottomRightRadius = newCorner + "px"
     product.children[1].style.borderBottomLeftRadius = newCorner + "px"
 }
@@ -169,7 +169,7 @@ function setCornerBottomRight(newCorner) {
 //to incline
 
 function incline(id, value) {
-    var product = $('#product');
+    let product = $('#product');
 
     switch (id) {
         case 'rightTopToInclineRight':
@@ -188,20 +188,20 @@ function incline(id, value) {
 }
 
 // resizeAngle 
-function resizeAngle(newSize) {
-    var angle = newSize;
-    toRotate(angle);
-}
+// function resizeAngle(newSize) {
+//     let angle = newSize;
+//     toRotate(angle);
+// }
 
 //optimazeSize
 
 function optimazeSize() {
-    var choice = $("input[id='checkbox']")[0].checked;
+    let choice = $("input[id='checkbox']")[0].checked;
 
-    var inputWidth = $("input[id='width']")[0];
-    var inputHeight = $("input[id='height']")[0];
-    var showHeight = $("[id='showHeightProduct']")[0].children[2];
-    var showWidth = $("[id='showWidthProduct']")[0].children[2];
+    let inputWidth = $("input[id='width']")[0];
+    let inputHeight = $("input[id='height']")[0];
+    let showHeight = $("[id='showHeightProduct']")[0].children[2];
+    let showWidth = $("[id='showWidthProduct']")[0].children[2];
 
     if (choice) {
         toogleDisabled(inputWidth, inputHeight, null, false);
@@ -284,10 +284,10 @@ coluna,
 
 
 function changeAmountSides(id) {
-    var titleBack = document.body.querySelectorAll('[id=titleBack]')[0];
-    var textBack = document.body.querySelectorAll('[id=textBack]')[0];
-    var colorBack = document.body.querySelectorAll('[id=colorBack]')[0];
-    var product = $('#product');
+    let titleBack = document.body.querySelectorAll('[id=titleBack]')[0];
+    let textBack = document.body.querySelectorAll('[id=textBack]')[0];
+    let colorBack = document.body.querySelectorAll('[id=colorBack]')[0];
+    let product = $('#product');
 
     if (id == "oneSide") {
         toogleDisabled(titleBack, textBack, colorBack, true);
@@ -300,7 +300,7 @@ function changeAmountSides(id) {
 
 
 function resizeWidthProduct(newWidth) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.width = newWidth + "px";
     product.children[1].style.width = newWidth + "px";
 
@@ -308,7 +308,7 @@ function resizeWidthProduct(newWidth) {
 }
 
 function resizeHeightProduct(newHeight) {
-    var product = $('#product');
+    let product = $('#product');
     product.children[0].style.height = newHeight + "px";
     product.children[1].style.height = newHeight + "px";
 
@@ -318,7 +318,7 @@ function resizeHeightProduct(newHeight) {
 
 //showSizeWidth
 function showSizeWidth(size) {
-    var width = document.body.querySelectorAll("[id='showWidthProduct']");
+    let width = document.body.querySelectorAll("[id='showWidthProduct']");
 
     if (size < 144) {
         alert("Atenção: Tamanho mínimo excedido!");
@@ -334,7 +334,7 @@ function showSizeWidth(size) {
 
 //showSizeHeight
 function showSizeHeight(size) {
-    var height = document.body.querySelectorAll("[id='showHeightProduct']");
+    let height = document.body.querySelectorAll("[id='showHeightProduct']");
 
     if (size < 80) {
         alert("Atenção: Tamanho mínimo excedido!");
@@ -360,7 +360,7 @@ function returnPage() {
 
 //zoomImage
 function zoomImage(newSize) {
-    var product = $('#product');
+    let product = $('#product');
     //product.style.transform= "scale(1."+newSize+",1."+newSize+")"
 
     product.children[0].style.transform = "scale(1." + newSize + ",1." + newSize + ")"
@@ -370,14 +370,15 @@ function zoomImage(newSize) {
         //document.getElementById('product').children[0].style.transform= "scale(1.5,1.5)"
 }
 
-//toRotate
-function toRotate(position) {
-    var product = $('#product')
-        //back numero x 
-        //front -180 x
-    product.children[0].style.transform = "perspective(600px) rotateY(" + position + "deg)";
-    product.children[1].style.transform = "perspective(600px) rotateY(" + position - 180 + "deg)";
-}
+// //toRotate
+// function toRotate(position) {
+//     $('#productFace').css("transform", "perspective(600px) rotateY(" + position + "deg)");
+//     $('#productFace').css("transform", "perspective(600px) rotateY(" + position - 180 + "deg)");
+//     //back numero x 
+//     //front -180 x
+//     // product.children[0].style.transform = "perspective(600px) rotateY(" + position + "deg)";
+//     // product.children[1].style.transform = "perspective(600px) rotateY(" + position - 180 + "deg)";
+// }
 
 // .display_paisaje:hover > .cardFront{
 // 	transform: perspective( 600px ) rotateY( -180deg );
@@ -386,27 +387,26 @@ function toRotate(position) {
 // 	transform: perspective( 600px ) rotateY( 0deg );
 // }
 
-var input = $("#inputFile");
-var fReader = new FileReader();
+let input = $("#inputFile");
+let fReader = new FileReader();
 fReader.readAsDataURL(input.files[0]);
 fReader.onloadend = function(event) {
-    var img = $("#product");
+    let img = $("#product");
     img.src = event.target.result;
 }
 
 //setBackColor
 function setBackColorFront(id, newColor) {
-    var product = $('#product');
-
+    // let product = $('#product');
     if (id == "colorFront") {
-        product.children[1].style.backgroundColor = newColor;
+        $('#productFront').css("backgroundColor", newColor);
     } else {
-        product.children[0].style.backgroundColor = newColor;
+        $('#productBack').css("backgroundColor", newColor);
     }
 }
 
 function selectBankImages(src) {
-    var newChosen = $('[name="chosen"]:checked').val();
+    let newChosen = $('[name="chosen"]:checked').val();
 
     if (newChosen == "Frente") {
         $('#product').children[1].style.backgroundImage = "url('" + src + "')"
@@ -420,23 +420,23 @@ function selectBankImages(src) {
 
 //API FileReader
 function selectPhoto() {
-    var photo = $('#openFile').files[0];
+    let photo = $('#openFile').files[0];
 
-    var imageType = /image.*/;
+    let imageType = /image.*/;
 
     if (!photo.type.match(imageType))
         alert('Please select a Photo');
     else {
-        var s = 'Name: ' + photo.name;
+        let s = 'Name: ' + photo.name;
         s += '<br>Type: ' + photo.type;
         s += '<br>Size: ' + photo.size;
         $('#product').innerHTML = s;
         // Display image
-        var img = document.createElement("img");
+        let img = document.createElement("img");
         img.file = photo;
         $('#product').appendChild(img);
 
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = (function(aImg) {
             return function(e) {
                 aImg.src = e.target.result;
