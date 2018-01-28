@@ -1,23 +1,27 @@
 {
-  "name": "printshop",
-  "version": "1.0.0",
-  "description": "\"# PrintShop.github.io\" \r \"# PrintShop.github.io\" \r \"# PrintShop.github.io\" \r \"# PrintShop.github.io\"",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hackbras/printshop.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hackbras/printshop/issues"
-  },
-  "homepage": "https://github.com/hackbras/printshop#readme",
-  "devDependencies": {
-    "jquery": "^3.3.1"
-  }
+    "name": "printshop",
+    "version": "1.0.0",
+    "description": "\"# PrintShop.github.io\" \r \"# PrintShop.github.io\" \r \"# PrintShop.github.io\" \r \"# PrintShop.github.io\"",
+    "main": "script.js",
+    "scripts": {
+        "start": "webpack-dev-server --colors --progress",
+        "dev": "webpack --progress --colors --display-error-details --resolve-alias"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hackbras/printshop.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hackbras/printshop/issues"
+    },
+    "homepage": "https://github.com/hackbras/printshop#readme",
+    "devDependencies": {
+        "bootstrap": "^4.0.0",
+        "jquery": "^3.3.1",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^2.11.1"
+    }
 }

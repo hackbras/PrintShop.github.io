@@ -1,278 +1,321 @@
-*{margin: 0px;padding: 0px}
+* {
+    margin: 0px;
+    padding: 0px
+}
 
-header{
+header {
     background-color: #fff;
-    color:#000;
+    color: #000;
     text-align: center;
     padding: 0px 10px 0px 10px;
-    display:flex;
+    display: flex;
 }
-nav{
+
+nav {
     background-color: #6f7375;
     display: flex;
-    border-top:3px solid #8c9ea7;
+    border-top: 3px solid #8c9ea7;
 }
-nav a{
-	font-size:12px;
-    margin: 5px 10px 5px 10px;  
-    text-decoration: none;     
+
+nav a {
+    font-size: 12px;
+    margin: 5px 10px 5px 10px;
+    text-decoration: none;
     color: #fff;
     font-weight: bold;
     border-bottom: 2px solid transparent;
 }
 
-#tabTools{
+#tabTools {
     list-style-type: none;
     float: left;
-    width:100%;
-    margin:0px;
+    width: 100%;
+    margin: 0px;
 }
 
-#tabTools li{
+#tabTools li {
     position: relative;
     float: left;
     background-color: #6f7375;
     display: inline-block;
-    padding: 0px 10px 0px 10px ;
+    padding: 0px 10px 0px 10px;
     border-top: 1px solid #8c9ea7;
     line-height: 28px;
 }
 
-#tabTools li a{
+#tabTools li a {
     font-family: Tahoma;
     font-size: 13px;
     color: #fff;
     text-decoration: none;
 }
-#tabTools li ul{
+
+#tabTools li ul {
     position: absolute;
     top: 28px;
     left: -20px;
     display: none;
-    z-index:1;
+    z-index: 1;
 }
-#tabTools li ul li{
+
+#tabTools li ul li {
     border: 1px solid #8c9ea7;
     display: block;
     width: 150px;
     height: 25px;
     line-height: 25px;
-    margin-top:1px;
-}
-#toolsFilter #menuFilter{
-	display:none;	
-	margin:-30px 0 0 192px;
-	z-index:1;
+    margin-top: 1px;
 }
 
-#toolsFont #menuFont{
-	display:none;	
-	margin:-30px 0 0 192px;
-	z-index:1;
+#toolsFilter #menuFilter {
+    display: none;
+    margin: -30px 0 0 192px;
+    z-index: 1;
 }
 
-#tabTools li:hover ul,#tabTools li ul li:hover ul,
+#toolsFont #menuFont {
+    display: none;
+    margin: -30px 0 0 192px;
+    z-index: 1;
+}
+
+#tabTools li:hover ul,
+#tabTools li ul li:hover ul,
 #toolsFont:hover #menuFont,
-#toolsFilter:hover #menuFilter{
+#toolsFilter:hover #menuFilter {
     display: block;
 }
 
-input,label{
-	font-size:12px;
+input,
+label {
+    font-size: 12px;
 }
-input[id=titleBack],input[id=textBack],
-input[id=colorBack]{
+
+input[id=titleBack],
+input[id=textBack],
+input[id=colorBack] {
     opacity: 0.4;
 }
 
-#sessionCompany{
-    width:70%;
-    background-color:#fff;
-    display:flex;
-    margin:0px;
-    color:#000;
-    padding:5px 0px 5px 40%;
-}/*
+#sessionCompany {
+    width: 70%;
+    background-color: #fff;
+    display: flex;
+    margin: 0px;
+    color: #000;
+    padding: 5px 0px 5px 40%;
+}
+
+
+/*
 #sessionCompany img{
     -webkit-filter: invert(100%); 
             filter: invert(100%);
 }*/
 
-#logo{
-    margin:0px 0px 0px 0px;
-    text-align:center;
-    width:25%;
-    background-color:#0c0c0c;    
-    color:#fff;    
-    float:left;
-    padding:20px;
+#logo {
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+    width: 25%;
+    background-color: #0c0c0c;
+    color: #fff;
+    float: left;
+    padding: 20px;
 }
 
-#nameCompany{
-    background-color:transparent;    
-}
-#nameCompany h1{
-	 text-shadow:1px 2px 10px #ecff00;
-}
-#user{
-	text-align:right;
-    right:0px;
-    margin:auto;
-    width:35%;
-    height:65px;
-    background-color:transparent;
+#nameCompany {
+    background-color: transparent;
 }
 
-section{
-    background-color:#945f61;
+#nameCompany h1 {
+    text-shadow: 1px 2px 10px #ecff00;
+}
+
+#user {
+    text-align: right;
+    right: 0px;
+    margin: auto;
+    width: 35%;
+    height: 65px;
+    background-color: transparent;
+}
+
+section {
+    background-color: #945f61;
     padding: 6px 0px 20px 6px;
-    display:flex;
+    display: flex;
 }
 
-h1{
+h1 {
     text-align: center;
 }
+
 
 /*-------- Controls --------*/
-.tools{
-    margin: 0px 0px 10px 0px; 
+
+.tools {
+    margin: 0px 0px 10px 0px;
     padding: 10px 10px 10px 10px;
     background-color: #bc8f8f;
-    width: 220px;    
+    width: 220px;
     height: 95%;
     overflow-y: scroll;
-    display:flex;
-}
-.legend{
-    text-align:right;
-    width:48%;
-    float:left;
-}
-.longLegend{
-    text-align:right;
-    width:50%;
-    height:20px;
-    float:left;
-    margin:4px 0px 3px 0px;
+    display: flex;
 }
 
-.control{
-    text-align:left;
-    width:48%;
-    right:0px;
+.legend {
+    text-align: right;
+    width: 48%;
+    float: left;
 }
-.controlLong{
-    float:right;
-    text-align:left;
-    width:48%;
-    right:0px;
-    margin:4px 0px 3px 0px;
+
+.longLegend {
+    text-align: right;
+    width: 50%;
+    height: 20px;
+    float: left;
+    margin: 4px 0px 3px 0px;
 }
-#modalImages{
+
+.control {
+    text-align: left;
+    width: 48%;
+    right: 0px;
+}
+
+.controlLong {
+    float: right;
+    text-align: left;
+    width: 48%;
+    right: 0px;
+    margin: 4px 0px 3px 0px;
+}
+
+#modalImages {
     text-align: center;
 }
 
-
-fieldset{
+fieldset {
     margin: 8px 0px 8px 0px;
     padding: 8px 0px 8px 0px;
 }
-legend{
+
+legend {
     font-weight: bold;
 }
-#basicSettings input{
-    margin-top:3px;
+
+#basicSettings input {
+    margin-top: 3px;
 }
-#text{
+
+#text {
     float: right;
     margin: 2px 10px 0px 0px;
     text-align: center;
 }
 
 
-
 /*----- Panel Show ----------*/
 
- /*Portrait*/
-    .display_portrait{
-        width:300px;
-        height:550px;
-    }
-    .defaultBusinessCard_portrait{
-        width:300px;
-        height:550px;
-    }
-    .defaultPamphlet_portrait{
-        width:350px;
-        height:500px;  
-    }
-    .defaultBanner_portrait{
-        width:350px;
-        height:800px;   
-    }
 
-    /*Paisaje*/
-    .display_paisaje{    
-        width:550px;
-        height:300px;
-        border: 2px solid black;
-    }
-    .defaultBusinessCard_paisaje{
-        width:550px;
-        height:300px;
-    }
-    .defaultPamphlet_paisaje{
-        width:500px;
-        height:350px;  
-    }
-    .defaultBanner_paisaje{
-        width:800px;
-        height:350px;   
-    }
+/*Portrait*/
+
+.display_portrait {
+    width: 300px;
+    height: 550px;
+}
+
+.defaultBusinessCard_portrait {
+    width: 300px;
+    height: 550px;
+}
+
+.defaultPamphlet_portrait {
+    width: 350px;
+    height: 500px;
+}
+
+.defaultBanner_portrait {
+    width: 350px;
+    height: 800px;
+}
+
+
+/*Paisaje*/
+
+.display_paisaje {
+    width: 550px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.defaultBusinessCard_paisaje {
+    width: 550px;
+    height: 300px;
+}
+
+.defaultPamphlet_paisaje {
+    width: 500px;
+    height: 350px;
+}
+
+.defaultBanner_paisaje {
+    width: 800px;
+    height: 350px;
+}
+
 
 /*no change*/
 
-.mug{
-    width:350px;
-    height:350px;
+.mug {
+    width: 350px;
+    height: 350px;
     border-radius: 20px;
 }
+
+
 /*-------Show Size -------*/
 
-#showWidthProduct{
-    position:relative;
-    top:17px;
-    left:45%;
-    margin:0px 20px 0px 20px;
+#showWidthProduct {
+    position: relative;
+    top: 17px;
+    left: 45%;
+    margin: 0px 20px 0px 20px;
 }
 
-#showHeightProduct{ 
-  position:relative;
-  top:-263px;
-  right:-93%;
-  margin:20px 20px 20px 20px;  
+#showHeightProduct {
+    position: relative;
+    top: -263px;
+    right: -93%;
+    margin: 20px 20px 20px 20px;
 }
-#WidthProduct{
-    width:40px;
-    margin-left:3px;    
+
+#WidthProduct {
+    width: 40px;
+    margin-left: 3px;
     background-color: #fff;
-    text-align: center;    
-}
-#showWidthProduct:after{
-    content: "cm";
-}
-#heightProduct{
-    width:40px;    
     text-align: center;
-    background-color: #fff;    
 }
-#showHeightProduct::after{
+
+#showWidthProduct:after {
     content: "cm";
 }
+
+#heightProduct {
+    width: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#showHeightProduct::after {
+    content: "cm";
+}
+
 
 /*-------- Footer --------*/
-footer{
-    background-color:lightslategray;
+
+footer {
+    background-color: lightslategray;
     clear: both;
     bottom: 0px;
     width: 100%;
@@ -280,88 +323,105 @@ footer{
     min-height: 50px;
     display: flex;
 }
-footer details{
+
+footer details {
     margin: auto;
 }
+
+
 /*-------- Display Area*/
-.displayArea{
+
+.displayArea {
     background-color: rosybrown;
     width: calc(100% - 280px);
-    float:left;
+    float: left;
     margin: 0px 0px 0px 20px;
-    padding:0px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
 }
-.displayArea h1{
-    padding:5px;
+
+.displayArea h1 {
+    padding: 5px;
 }
-.displayPanel{
-    background-image: url('img/logoLeaoPlacas6.png');  
+
+.displayPanel {
+    background-image: url('img/logoLeaoPlacas6.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height:85%;
-    margin:-25px 8px 0px 8px;
-    left:50px; 
-    display:grid;
+    height: 85%;
+    margin: -25px 8px 0px 8px;
+    left: 50px;
+    display: grid;
 }
-#product{   
-   position:relative; 
-   background-color: transparent;   
-   border: 0px solid black;
-   box-sizing:border-box;
-   margin:8% 0 0 12%;
+
+#product {
+    position: relative;
+    background-color: transparent;
+    border: 0px solid black;
+    box-sizing: border-box;
+    margin: 8% 0 0 12%;
 }
+
+
 /*--------------Grid Images -------------- */
-.images{
+
+.images {
     padding: 10%;
     z-index: 2;
 }
-.gridImages{
+
+.gridImages {
     background-color: white;
     display: flex;
-    position: relative;    
+    position: relative;
     width: 80%;
 }
-.boxImage{
+
+.boxImage {
     padding: 5px;
     margin: auto;
 }
-.boxImage h1{
+
+.boxImage h1 {
     margin: 3px;
     text-align: center;
     font-weight: bold;
 }
-.boxImage img{
+
+.boxImage img {
     margin: 3px;
     border-radius: 7px;
     width: 100px;
     height: 100px;
 }
 
+
 /*-------------- Product ---------------*/
 
-
-.product_titleFront,.product_textFront,
-.product_titleBack,.product_textBack{
+.product_titleFront,
+.product_textFront,
+.product_titleBack,
+.product_textBack {
     text-align: center;
 }
 
-.product_footerFront{
-    width:100%;
-    clear:both;
-    bottom:0px;
+.product_footerFront {
+    width: 100%;
+    clear: both;
+    bottom: 0px;
 }
 
-.images{
-	top:0px;
-	left:0px;
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-color:rgba(0, 0, 0, 0.75);
+.images {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
     display: none;
     z-index: 1;
 }
-.images span{
+
+.images span {
     background-color: gray;
     padding: 0 0 0 65%;
     color: red;
@@ -369,46 +429,50 @@ footer details{
     right: 0px;
     top: 0px;
 }
-.images #chosenSide{
+
+.images #chosenSide {
     background-color: gray;
     width: 80%;
 }
-.images #chosenSide label{
+
+.images #chosenSide label {
     font-size: 25px;
 }
 
-.cardBack{
-	position:absolute;
-	transform: perspective( 600px ) rotateY( -180deg );
-	background: #80BFFF; 
-	width:509px;
-    height:258px; 
-	backface-visibility: hidden;
-	transition: transform .6s linear 0s;
-    box-shadow:10px 10px 5px #2d2d2d;    
-    padding:20px;
-    display: none;
-    margin-top:0px;    
+.cardBack {
+    content: 'Em branco';
+    position: absolute;
+    transform: perspective( 600px) rotateY( -180deg);
+    background: #FFF;
+    width: 509px;
+    height: 258px;
+    backface-visibility: hidden;
+    transition: transform .6s linear 0s;
+    box-shadow: 10px 10px 5px #2d2d2d;
+    padding: 20px;
+    display: block;
+    margin-top: 0px;
     margin-left: 23%;
 }
-.cardFront{
-	position:absolute;
-	transform: perspective( 600px ) rotateY( 0deg );
-	background:#FC0; 
-    width:509px;
-    height:258px; 
-	backface-visibility: hidden;
-	transition: transform .6s linear 0s;    
-    box-shadow:10px 10px 5px #2d2d2d;    
-    padding:20px;
-    margin-top:0px;
+
+.cardFront {
+    position: absolute;
+    transform: perspective( 600px) rotateY( 0deg);
+    background: #FC0;
+    width: 509px;
+    height: 258px;
+    backface-visibility: hidden;
+    transition: transform .6s linear 0s;
+    box-shadow: 10px 10px 5px #2d2d2d;
+    padding: 20px;
+    margin-top: 0px;
     margin-left: 23%;
 }
-#product:hover > .cardFront{
-	transform: perspective( 600px ) rotateY( 180deg );
+
+#product:hover>.cardFront {
+    transform: perspective( 600px) rotateY( 180deg);
 }
 
-#product:hover > .cardBack{
-	transform: perspective( 600px ) rotateY( 0deg );
+#product:hover>.cardBack {
+    transform: perspective( 600px) rotateY( 0deg);
 }
-
