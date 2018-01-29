@@ -469,10 +469,19 @@ footer details {
     margin-left: 23%;
 }
 
-#product:hover>.cardFront {
+.rotateFront {
+    transform: perspective( 600px) rotateY( 180deg);
+}
+
+.rotateBack {
+    transform: perspective( 600px) rotateY( 0deg);
+}
+
+
+/*#product:hover>.cardFront {
     transform: perspective( 600px) rotateY( 180deg);
 }
 
 #product:hover>.cardBack {
     transform: perspective( 600px) rotateY( 0deg);
-}
+}*/

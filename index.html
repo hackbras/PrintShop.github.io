@@ -102,7 +102,7 @@
                         <input class="control" id="colorFront" type="color" value="#FC0" onchange="setBackColorFront(this.id,this.value)">
 
                         <label class="legend" for="colorBack">Cor do Verso:</label>
-                        <input class="control" id="colorBack" type="color" value="#80BFFF" onchange="setBackColorFront(this.id,this.value)">
+                        <input class="control" id="colorBack" type="color" value="#80B" onchange="setBackColorFront(this.id,this.value)">
 
 
                         <legend>Imagem de fundo:</legend>
@@ -274,7 +274,7 @@
                         <h1 class="product_titleBack"></h1>
                         <p class="product_textBack"></p>
                     </span>
-                        <span id="productFace" class="cardFront">                        
+                        <span id="productFront" class="cardFront">                        
                         <h1 class="product_titleFront">Título Frontal</h1>
                         <p class="product_textFront">Texto Frontal</p>
                     </span>
@@ -299,6 +299,20 @@
                 <p>by suportedesk</p>
             </details>
         </footer>
+        <script>
+            $(document).ready(function() {
+                $('#product').on({
+                    mouseover: function() {
+                        $('.cardFront').addClass('rotateFront');
+                        $('.cardBack').addClass('rotateBack');
+                    },
+                    mouseout: function() {
+                        $('.cardFront').removeClass('rotateFront');
+                        $('.cardBack').removeClass('rotateBack');
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>

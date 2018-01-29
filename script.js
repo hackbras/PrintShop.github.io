@@ -1,3 +1,18 @@
+$(document).ready(function() {
+    $('#product').on({
+        mouseover: function() {
+            //$(this).css('backgroundColor', 'pink');
+            $('.cardFront').addClass('testeFront');
+            $('.cardBack').addClass('testeBack');
+        },
+        mouseout: function() {
+            $('.cardFront').removeClass('testeFront');
+            $('.cardBack').removeClass('testeBack');
+            //$(this).css('backgroundColor', 'black');
+        }
+    });
+});
+
 function load() {
 
     setHeight();
@@ -270,6 +285,8 @@ coluna,
 //exibir duas faces simultãneamente
 //se estiver como paisagem exibir lado a lado
 //se não exibir em cima da outra
+
+// });
 
 //Exibir um pado por vez
 
