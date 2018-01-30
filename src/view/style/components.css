@@ -1,0 +1,81 @@
+/*-------- Components Controls --------*/
+
+
+/*--------------Grid Images -------------- */
+
+.images {
+    padding: 10%;
+    z-index: 2;
+}
+
+.grid-images {
+    background-color: white;
+    display: flex;
+    position: relative;
+    width: 80%;
+}
+
+.box-image {
+    padding: 5px;
+    margin: auto;
+}
+
+.box-image h1 {
+    margin: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box-image img {
+    margin: 3px;
+    border-radius: 7px;
+    width: 100px;
+    height: 100px;
+}
+
+
+/*---- Components of form ----*/
+
+input,
+label {
+    font-size: 12px;
+}
+
+input[id=titleBack],
+input[id=textBack],
+input[id=color-back] {
+    opacity: 0.4;
+}
+
+.legend {
+    text-align: right;
+    width: 48%;
+    float: left;
+}
+
+.long-legend {
+    text-align: right;
+    width: 50%;
+    height: 20px;
+    float: left;
+    margin: 4px 0px 3px 0px;
+}
+
+.tool__fieldset {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 0px 8px 0px;
+}
+
+.tool__legend {
+    font-weight: bold;
+}
+
+#text {
+    float: right;
+    margin: 2px 10px 0px 0px;
+    text-align: center;
+}
+
+#modal-images {
+    text-align: center;
+}
